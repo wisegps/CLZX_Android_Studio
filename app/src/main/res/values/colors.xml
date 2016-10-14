@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--注意也是-->
+    <color name="colorPrimary">@color/blue_theme</color>
+    <color name="colorPrimaryDark">@color/blue_theme</color>
+    <color name="colorAccent">@color/white</color>
+    <color name="blue_theme">#067de1</color>
+    <color name="pink">#FF4081</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="black_light">#222222</color>
+    <color name="gray">#eaeaea</color>
+    <color name="gray_dark">#aeaeae</color>
+    <color name="yellow">#efd408</color>
+    <color name="gray_line">#e3e9cf</color>
+</resources>

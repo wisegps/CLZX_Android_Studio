@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:background="@color/blue_theme"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <com.wicare.wistorm.widget.WInputField
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="80dp"
+            android:drawableLeft="@drawable/ic_edittext_search"
+            android:background="@android:color/transparent"
+            android:hint="@string/search_hint"
+            android:textColorHint="#dadada"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"/>
+
+
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="17dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back"/>
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

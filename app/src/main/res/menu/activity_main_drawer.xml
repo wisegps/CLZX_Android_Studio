@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add_car"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/add_cars" />
+        <item
+            android:id="@+id/nav_edit"
+            android:icon="@drawable/ic_menu_edit"
+            android:title="@string/change_password" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_setting"
+            android:title="@string/app_setting" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/app_about" />
+    </group>
+
+
+
+</menu>

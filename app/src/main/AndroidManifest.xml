@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wisegps.clzx">
+
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Required -->
+    <uses-permission android:name="com.wisegps.clzx.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name=".app.App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.user.LoginActivity"
+            android:theme="@style/FullScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 发布版本 F3:0A:1B:B3:9C:5A:FF:F1:76:23:49:A0:65:FC:32:CD:11:FA:68:CD-->
+        <!-- 开发版本 32:B5:97:FD:EF:11:17:30:61:97:6D:69:47:2B:91:16:C5:0F:09:84-->
+
+
+        <!--
+            2016-09-06 最新获取的百度地图key : cBNXHXYGPT1AOnbLF4rUeefadmPGLxbh
+            -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="cBNXHXYGPT1AOnbLF4rUeefadmPGLxbh" />
+        <!-- wistorm keys-->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+
+
+        <meta-data
+            android:name="Wistorm_appSecret"
+            android:value="565975d7d7d01462245984408739804d" />
+        <meta-data
+            android:name="Wistorm_appKey"
+            android:value="96a3e23a32d4b81894061fdd29e94319" />
+        <meta-data
+            android:name="Wistorm_devKey"
+            android:value="59346d400236ab95e95193f35f3df6a4" />
+
+        <!--主界面-->
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/AppThemeNoBar">
+        </activity>
+
+        <!--搜索界面-->
+        <activity android:name=".activity.SearchResultActivity">
+        </activity>
+
+        <!--地图界面-->
+
+        <!--重置密码-->
+        <activity android:name=".activity.user.PasswrodActivity"/>
+        android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+        <!--注册-->
+        <activity android:name=".activity.user.RegisterActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/register"/>
+        <!--参数设置-->
+        <activity android:name=".activity.user.SettingActivity"
+            android:label="@string/app_setting"/>
+        <!--关于-->
+        <activity android:name=".activity.user.AboutActivity"
+            android:label="@string/about"/>
+        <!--车辆管理-->
+        <activity android:name=".activity.car.CarManagerActivity"
+            android:label="@string/car_manager"/>
+        <!--添加车辆-->
+        <activity android:name=".activity.car.CarAddActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/add_cars"/>
+        <!--部门-->
+        <activity android:name=".activity.car.DepartmentActivity"
+
+            android:label="@string/department"/>
+        <!--绑定设备-->
+        <activity android:name=".activity.car.DeviceBindActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/bind_device"/>
+        <!--车辆详情-->
+        <activity android:name=".activity.car.CarDetailActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/car_detail"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">车联在线</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">搜索</string>
+    <string name="net_error">网络异常，请重新尝试。</string>
+
+    <string name="login">登录</string>
+    <string name="check_pwd">记住密码</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="add_department">添加部门</string>
+    <string name="no_content">内容不能为空</string>
+    <string name="edit">编辑</string>
+    <string name="edit_department_name">修改部门名字</string>
+    <string name="delete_department">删除部门</string>
+
+    <string name="delete_car">确定要删除这车辆吗？</string>
+
+    <string name="delete_success">删除成功</string>
+    <string name="delete_failed">删除失败</string>
+    <string name="add_success">添加成功</string>
+    <string name="add_fail">添加失败</string>
+    <string name="edit_fail">修改失败</string>
+    <string name="edit_success">修改成功</string>
+    <string name="mileage_must_number">里程必须为数字</string>
+
+    <string name="search_hint">输入车辆名称</string>
+    <string name="account_hit">输入手机号</string>
+    <string name="password_hit">输入密码</string>
+    <!--menu-->
+    <string name="change_password">修改密码</string>
+    <string name="app_about">关于软件</string>
+    <string name="app_setting">参数设置</string>
+    <string name="add_cars">添加车辆</string>
+
+    <string name="car_manager">车辆管理</string>
+    <string name="about">关于</string>
+    <string name="register">注册账号</string>
+    <string name="department">部门管理</string>
+
+    <string name="no_bind_device">设备没有绑定,点击进行绑定设备!</string>
+    <string name="bind_device">绑定设备</string>
+    <string name="car_detail">车辆详情</string>
+
+    <string name="no_car">没有车辆，快添加车辆吧。</string>
+    <string name="no_department">没有部门，快创建部门吧。</string>
+    <string name="car_name">车牌号码</string>
+    <string name="car_desc">品牌车系</string>
+    <string name="car_frameno">车架号</string>
+    <string name="car_engineno">发动机号</string>
+    <string name="car_buy_date">购置日期</string>
+    <string name="car_mileage">行驶里程(km)</string>
+    <string name="car_maintainmileage">下次保养里程(km)</string>
+    <string name="car_insuranceExpireln">保养到期日</string>
+    <string name="car_inspectExpireln">年检到期日</string>
+    <string name="car_department">使用部门</string>
+    <string name="please_input_device_id">请输入设备号</string>
+
+
+    <string name="bind_device_failed">绑定设备失败</string>
+    <string name="bind_device_success">绑定设备成功</string>
+
+
+    <!--侧滑菜单-->
+    <string name="left_menu_car_manager">车辆管理</string>
+    <string name="left_menu_password">修改密码</string>
+    <string name="left_menu_setting">参数设置</string>
+    <string name="left_menu_about">关于</string>
+
+
+
+</resources>

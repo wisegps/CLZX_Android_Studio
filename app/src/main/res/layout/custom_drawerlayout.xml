@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!--&lt;!&ndash;Toolbar&ndash;&gt;-->
+    <!--<include layout="@layout/custom_toolbar" />-->
+
+    <!--&lt;!&ndash;主布局&ndash;&gt;-->
+    <!--<RelativeLayout-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<FrameLayout-->
+            <!--android:id="@+id/frame_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scrollbars="none" />-->
+    <!--</RelativeLayout>-->
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/custom_toolbar" />
+
+
+        <FrameLayout
+            android:id="@+id/frame_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!--侧滑菜单-->
+    <RelativeLayout
+        android:layout_width="@dimen/px_400"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="start">
+        <ListView
+            android:id="@+id/lv_left_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:divider="@null"/>
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>

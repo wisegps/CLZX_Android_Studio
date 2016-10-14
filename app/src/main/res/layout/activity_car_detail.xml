@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/px_8" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:hint="@string/car_name"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:hint="@string/car_desc"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_frameno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:hint="@string/car_frameno"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_engineno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:hint="@string/car_engineno"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_buy_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:focusable="false"
+            android:hint="@string/car_buy_date"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_mileage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:hint="@string/car_mileage"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_maintainmileage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:hint="@string/car_maintainmileage"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_insuranceExpireln"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:focusable="false"
+            android:hint="@string/car_insuranceExpireln"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_inspectExpireln"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:focusable="false"
+            android:hint="@string/car_inspectExpireln"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_car_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:met_baseColor= "@color/blue_theme"
+            app:met_primaryColor="@color/blue_theme"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            android:focusable="false"
+            android:hint="@string/car_department"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/selector_btn_blue_bg"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="@string/confirm"/>
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
