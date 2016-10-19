@@ -7,6 +7,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.orhanobut.logger.Logger;
@@ -15,7 +18,9 @@ import com.wicare.wistorm.api.WVehicleApi;
 import com.wicare.wistorm.http.BaseVolley;
 import com.wicare.wistorm.http.OnFailure;
 import com.wicare.wistorm.http.OnSuccess;
+import com.wicare.wistorm.zbar.CaptureActivity;
 import com.wisegps.clzx.R;
+import com.wisegps.clzx.activity.SearchResultActivity;
 import com.wisegps.clzx.app.App;
 import com.wisegps.clzx.utils.SystemTools;
 
@@ -44,6 +49,7 @@ public class DeviceBindActivity extends AppCompatActivity {
 
     private String objectId;//车辆id
     private String did;//设备id
+    private final int REQUEST_BING_DEVICE_CODE=0;
 
 
     @Override
@@ -53,6 +59,7 @@ public class DeviceBindActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initView();
         initWistorm();
+        CaptureActivity.startAction(mContext,REQUEST_BING_DEVICE_CODE);
     }
 
     private void initWistorm() {
@@ -88,11 +95,31 @@ public class DeviceBindActivity extends AppCompatActivity {
         context.startActivityForResult(intent, requestCode);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bind_device_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_scan) {
+            CaptureActivity.startAction(mContext,REQUEST_BING_DEVICE_CODE);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        // 取得返回信息
+        if (resultCode == RESULT_OK) {
+            Bundle bundle = data.getExtras();
+            String scanResult = bundle.getString("result");
+            etDeviceId.setText(scanResult);
+        }
     }
 
 

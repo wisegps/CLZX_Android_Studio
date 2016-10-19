@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
+
     @Bind(R.id.lv_left_menu)
     ListView lvLeftMenu;
+
     @Bind(R.id.drawerLayout)
     DrawerLayout mDrawerLayout;
 

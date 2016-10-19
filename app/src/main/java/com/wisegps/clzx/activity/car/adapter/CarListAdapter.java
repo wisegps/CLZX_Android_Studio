@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.baidu.trace.L;
 import com.wisegps.clzx.R;
 import com.wisegps.clzx.activity.car.model.CarInfo;
 
@@ -53,7 +52,7 @@ public class CarListAdapter extends BaseAdapter{
         ViewHolder viewHolder = null;
         if(converview == null){
             inflater = LayoutInflater.from(mContext);
-            converview = inflater.inflate(R.layout.item_cars_list,parent,false);
+            converview = inflater.inflate(R.layout.item_cars_manager_list,parent,false);
             viewHolder = new ViewHolder();
             viewHolder.tvCarName = (TextView)converview.findViewById(R.id.tv_car_name);
             viewHolder.tvDesc = (TextView)converview.findViewById(R.id.tv_car_desc);

@@ -39,7 +39,7 @@ public class WCommApi extends WiStormApi {
 	/**
 	 * 发送短信验证码
 	 * @param mobile 手机号
-	 * @param type type: 发送短信类型   1: 普通校验码信息
+	 * @param type type: 发送短信类型   1: 普通校验码信息 2：忘记密码
 	 * @param onSuccess 连接成功回调
 	 * @param onFailure   连接失败回调
 	 */

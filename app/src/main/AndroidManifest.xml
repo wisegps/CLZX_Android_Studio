@@ -88,7 +88,9 @@
         </activity>
 
         <!--搜索界面-->
-        <activity android:name=".activity.SearchResultActivity">
+        <activity android:name=".activity.SearchResultActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/car_list">
         </activity>
 
         <!--地图界面-->

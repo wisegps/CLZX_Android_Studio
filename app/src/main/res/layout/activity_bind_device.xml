@@ -17,6 +17,15 @@
         android:layout_marginTop="@dimen/px_60"
         android:hint="@string/please_input_device_id"/>
 
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_saoyisao"-->
+        <!--android:layout_width="@dimen/px_80"-->
+        <!--android:layout_height="@dimen/px_80"-->
+        <!--android:background="@drawable/selector_img_scan_bg"-->
+        <!--android:layout_alignTop="@+id/et_device_id"-->
+        <!--android:layout_alignRight="@+id/et_device_id"-->
+        <!--android:layout_alignEnd="@+id/et_device_id" />-->
+
 
     <Button
         android:id="@+id/btn_confirm"

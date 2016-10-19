@@ -24,9 +24,6 @@ public class WDeviceApi extends WiStormApi {
 	private String Method_Device_Delete = "wicare._iotDevice.delete";//删除设备
 	private String Method_Device_List   = "wicare._iotDevice.list";//设备列表
 
-	private String Method_Gpsdata_Create = "wicare._iotGpsData.create";//创建历史定位记录
-	private String Method_Gpsdata_Get = "wicare._iotGpsData.list";//获取历史定位记录
-
 	private BaseVolley volley;
 	
 	
@@ -57,40 +54,11 @@ public class WDeviceApi extends WiStormApi {
 	/**
 	 * 创建设备（或注册设备）
 	 * @param params
-	 * @param fields
 	 * @param onSuccess
 	 * @param onFailure
 	 */
-	public void create(HashMap<String, String> params,String fields,OnSuccess onSuccess,OnFailure onFailure){
-		String url = super.getUrl(Method_Device_Create, fields, params);
-		Log.i("TEST_WISTORM", url);
-		volley.request(url, onSuccess,onFailure);
-	}
-	
-	/**
-	 * 创建GPS 定位记录
-	 * @param params
-	 * @param fields
-	 * @param onSuccess
-	 * @param onFailure
-	 */
-	public void gpsCreate(HashMap<String, String> params,String fields,OnSuccess onSuccess,OnFailure onFailure){
-		String url = super.getUrl(Method_Gpsdata_Create, fields, params);
-		Log.i("TEST_WISTORM", url);
-		volley.request(url, onSuccess,onFailure);
-	}
-	
-	
-	/**
-	 * 获取GPS历史定位记录
-	 *
-	 * @param params
-	 * @param fields
-	 * @param onSuccess
-	 * @param onFailure
-	 */
-	public void getGpsList(HashMap<String, String> params,String fields,OnSuccess onSuccess,OnFailure onFailure){
-		String url = super.getUrl(Method_Gpsdata_Get, fields, params);
+	public void create(HashMap<String, String> params,OnSuccess onSuccess,OnFailure onFailure){
+		String url = super.getUrl(Method_Device_Create, "", params);
 		Log.i("TEST_WISTORM", url);
 		volley.request(url, onSuccess,onFailure);
 	}
@@ -104,8 +72,8 @@ public class WDeviceApi extends WiStormApi {
 	 * @param onSuccess
 	 * @param onFailure
 	 */
-	public void updata(HashMap<String, String> params,String fields,OnSuccess onSuccess,OnFailure onFailure){
-		String url = super.getUrl(Method_Device_Updata, fields, params);
+	public void updata(HashMap<String, String> params,OnSuccess onSuccess,OnFailure onFailure){
+		String url = super.getUrl(Method_Device_Updata, "", params);
 		Log.i("TEST_WISTORM", url);
 		volley.request(url, onSuccess,onFailure);
 	}

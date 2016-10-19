@@ -7,6 +7,8 @@
 
     <ImageView
         android:id="@+id/iv_menu_ico"
+        android:layout_marginLeft="@dimen/px_20"
+        android:layout_marginBottom="@dimen/px_30"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:src="@drawable/ic_launcher" />
@@ -15,7 +17,10 @@
         android:id="@+id/tv_menu_name"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textSize="18sp"
+        android:layout_marginLeft="@dimen/px_20"
+        android:layout_marginBottom="@dimen/px_30"
+        android:textSize="14sp"
+        android:textColor="@color/white"
         android:text="车辆管理"/>
 
 </LinearLayout>

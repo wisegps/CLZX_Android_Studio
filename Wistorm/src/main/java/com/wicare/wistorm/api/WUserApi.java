@@ -101,19 +101,19 @@ public class WUserApi extends WiStormApi {
 
 
 	/**
-	 * @param mobile    账号
+	 * @param account    账号
 	 * @param onSuccess 连接成功回调
 	 * @param onFailure 连接失败回调
 	 * @param type   0:username,1:email,2:mobile
 	 */
-	public void isExist(String mobile,int type,OnSuccess onSuccess,OnFailure onFailure){
+	public void isExist(String account,int type,OnSuccess onSuccess,OnFailure onFailure){
 		HashMap<String, String> params = new HashMap<String, String>();
 		if(type == 0){
-			params.put("username",mobile);
+			params.put("username",account);
 		}else if(type == 1){
-			params.put("email",mobile);
+			params.put("email",account);
 		}else if(type == 2){
-			params.put("mobile",mobile);
+			params.put("mobile",account);
 		}
 		String url = super.getUrl(Method_User_User_exist, "", params);
 		volley.request(url,onSuccess,onFailure);
