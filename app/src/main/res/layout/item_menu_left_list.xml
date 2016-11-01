@@ -5,22 +5,29 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical">
 
-    <ImageView
-        android:id="@+id/iv_menu_ico"
-        android:layout_marginLeft="@dimen/px_20"
-        android:layout_marginBottom="@dimen/px_30"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:src="@drawable/ic_launcher" />
+    <RelativeLayout
+        android:layout_marginTop="@dimen/px_16"
+        android:layout_marginBottom="@dimen/px_16"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_menu_ico"
+            android:layout_marginLeft="@dimen/px_20"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/px_6"
+            android:layout_height="@dimen/px_36"
+            android:layout_width="@dimen/px_36"
+            android:src="@drawable/ic_launcher" />
 
-    <TextView
-        android:id="@+id/tv_menu_name"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="@dimen/px_20"
-        android:layout_marginBottom="@dimen/px_30"
-        android:textSize="14sp"
-        android:textColor="@color/white"
-        android:text="车辆管理"/>
-
+        <TextView
+            android:id="@+id/tv_menu_name"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/iv_menu_ico"
+            android:layout_marginLeft="@dimen/px_20"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="车辆管理"/>
+    </RelativeLayout>
 </LinearLayout>

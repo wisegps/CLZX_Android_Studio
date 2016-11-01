@@ -45,6 +45,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".activity.user.LoginActivity"
             android:theme="@style/FullScreenTheme">
@@ -117,7 +118,6 @@
             android:label="@string/add_cars"/>
         <!--部门-->
         <activity android:name=".activity.car.DepartmentActivity"
-
             android:label="@string/department"/>
         <!--绑定设备-->
         <activity android:name=".activity.car.DeviceBindActivity"
@@ -127,6 +127,11 @@
         <activity android:name=".activity.car.CarDetailActivity"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
             android:label="@string/car_detail"/>
+
+
+
+        <service android:name=".service.DataService"></service>
+
     </application>
 
 </manifest>

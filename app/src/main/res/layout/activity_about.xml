@@ -23,4 +23,13 @@
         android:text="版本 V 1.0" />
 
 
+    <TextView
+        android:id="@+id/tv_check_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/px_90"
+        android:text="@string/check_update"/>
+
 </RelativeLayout>

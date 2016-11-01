@@ -9,6 +9,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
@@ -46,8 +48,8 @@ public class CarManagerActivity extends AppCompatActivity {
 
     @Bind(R.id.lv_car)
     ListView lvCar;
-    @Bind(R.id.f_add_car)
-    FloatingActionButton addcar;
+//    @Bind(R.id.f_add_car)
+//    FloatingActionButton addcar;
     @Bind(R.id.tv_no_car)
     TextView tvNoCar;
 
@@ -80,11 +82,11 @@ public class CarManagerActivity extends AppCompatActivity {
         ActionBar mActionBar = getSupportActionBar();
         mActionBar.setHomeButtonEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);
-        addcar.setBackgroundTintList(ColorStateList.valueOf(0xff067de1));
+//        addcar.setBackgroundTintList(ColorStateList.valueOf(0xff067de1));
         carsListAdapter = new CarListAdapter(mContext);
         carsListAdapter.setData(carListInfo);
         lvCar.setAdapter(carsListAdapter);
-        lvCar.setOnScrollListener(onScrollListener);
+//        lvCar.setOnScrollListener(onScrollListener);
         carsListAdapter.setOnCarEditClickListener(onCarEditClickListener);
         carsListAdapter.setOnBindDeviceClickListener(onBindDeviceClickListener);
         carsListAdapter.setOnCarDetailClickListener(onCarDetailClickListener);
@@ -111,6 +113,20 @@ public class CarManagerActivity extends AppCompatActivity {
 //        context.overridePendingTransition(R.anim.alpha_enter, R.anim.alpha_exit);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.car_manager_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_car_add) {
+            CarAddActivity.startAction(mContext, REQUEST_ADD_CAR);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     /**
      * 获取车辆列表信息
@@ -206,10 +222,6 @@ public class CarManagerActivity extends AppCompatActivity {
         }
     };
 
-    @OnClick(R.id.f_add_car)
-    public void onClick() {
-        CarAddActivity.startAction(mContext, REQUEST_ADD_CAR);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -269,45 +281,6 @@ public class CarManagerActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * listview 滑动监听
-     */
-    private AbsListView.OnScrollListener onScrollListener = new AbsListView.OnScrollListener() {
-        @Override
-        public void onScrollStateChanged(AbsListView absListView, int scrollState) {
-            switch (scrollState) {
-
-            case AbsListView.OnScrollListener.SCROLL_STATE_IDLE: // 当不滚动时
-                // 判断滚动到底部
-                if (lvCar.getFirstVisiblePosition() == 0) {
-                    addcar.setVisibility(View.VISIBLE);
-                }else {
-                    addcar.setVisibility(View.GONE);
-                }
-                break;
-            case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:// 滚动时
-                // 判断滚动到底部
-                if (lvCar.getFirstVisiblePosition() == 0) {
-                    addcar.setVisibility(View.VISIBLE);
-                }else {
-                    addcar.setVisibility(View.GONE);
-                }
-                break;
-            case AbsListView.OnScrollListener.SCROLL_STATE_FLING:// 是当用户由于之前划动屏幕并抬起手指，屏幕产生惯性滑动时
-                // 判断滚动到底部
-                if (lvCar.getFirstVisiblePosition() == 0) {
-                    addcar.setVisibility(View.VISIBLE);
-                }else {
-                    addcar.setVisibility(View.GONE);
-                }
-                break;
-            }
-        }
-
-        @Override
-        public void onScroll(AbsListView absListView, int firstVisibleItem,int visibleItemCount, int totalItemCount) {
-        }
-    };
     /**
      objectId: Number //对象ID
      uid: Number //所属用户ID

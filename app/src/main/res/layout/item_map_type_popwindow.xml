@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_rect_border_normal">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/px_46"
+        android:layout_height="@dimen/px_46"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/px_16"
+        android:elevation="@dimen/px_16"
+        android:background="@drawable/selector_close_bg"/>
+
+    <LinearLayout
+        android:layout_below="@id/iv_close"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:elevation="@dimen/px_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginRight="@dimen/px_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/iv_noamal"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/px_16"
+                android:background="@drawable/ic_map_mode_normal"
+                android:button="@drawable/selector_map_normal_bg"/>
+            <TextView
+                android:id="@+id/tv_map_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_noamal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/px_16"
+                android:elevation="@dimen/px_16"
+                android:textColor="@color/color_666666"
+                android:text="@string/map_type_normal" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/px_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/iv_satellite"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/px_16"
+                android:background="@drawable/ic_map_mode_satellite"
+                android:button="@drawable/selector_map_satellite_bg"/>
+            <TextView
+                android:id="@+id/tv_map_sate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_satellite"
+                android:layout_marginTop="@dimen/px_16"
+                android:layout_centerHorizontal="true"
+                android:elevation="@dimen/px_16"
+                android:textColor="@color/color_666666"
+                android:text="@string/map_type_satellite" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

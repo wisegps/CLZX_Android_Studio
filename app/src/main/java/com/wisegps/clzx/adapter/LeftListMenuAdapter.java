@@ -55,6 +55,20 @@ public class LeftListMenuAdapter extends BaseAdapter {
         }else{
             viewHolder = (ViewHolder)converView.getTag();
         }
+        switch (position){
+            case 0:
+                viewHolder.ivMenuIcon.setImageResource(R.drawable.ic_car_manager);
+                break;
+            case 1:
+                viewHolder.ivMenuIcon.setImageResource(R.drawable.ic_edit);
+                break;
+            case 2:
+                viewHolder.ivMenuIcon.setImageResource(R.drawable.ic_setting);
+                break;
+            case 3:
+                viewHolder.ivMenuIcon.setImageResource(R.drawable.ic_about);
+                break;
+        }
         viewHolder.tvMenuName.setText(menuNames.get(position));
         return converView;
     }

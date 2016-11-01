@@ -44,7 +44,6 @@
     <RelativeLayout
         android:layout_width="@dimen/px_340"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/px_30"
         android:background="#9f000000"
         android:layout_gravity="start">
         <ListView

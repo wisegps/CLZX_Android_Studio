@@ -51,6 +51,8 @@ public class SearchResultActivity extends AppCompatActivity implements SearchVie
 
     @Override
     public boolean onSupportNavigateUp() {
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
         this.finish();
         return super.onSupportNavigateUp();
     }
@@ -59,9 +61,9 @@ public class SearchResultActivity extends AppCompatActivity implements SearchVie
     /**
      * @param context
      */
-    public static void startAction(Activity context) {
+    public static void startAction(Activity context,int requestCode) {
         Intent intent = new Intent(context, SearchResultActivity.class);
-        context.startActivity(intent);
+        context.startActivityForResult(intent,requestCode);
 //        context.overridePendingTransition(R.anim.alpha_enter,R.anim.alpha_exit);
     }
 

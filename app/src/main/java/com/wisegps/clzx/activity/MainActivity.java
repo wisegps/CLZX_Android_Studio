@@ -20,7 +20,11 @@ import com.wisegps.clzx.activity.user.AboutActivity;
 import com.wisegps.clzx.activity.user.PasswrodActivity;
 import com.wisegps.clzx.activity.user.SettingActivity;
 import com.wisegps.clzx.adapter.LeftListMenuAdapter;
-import com.wisegps.clzx.fragment.MapFragment;
+import com.wisegps.clzx.fragment.BaiduMapEvent;
+import com.wisegps.clzx.fragment.BaiduMapFragment;
+import com.wisegps.clzx.service.DataService;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,10 +46,13 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.drawerLayout)
     DrawerLayout mDrawerLayout;
 
+
+    private final int REQUEST_SEARCHE_CODE = 0;
     private List<String> menuNames = new ArrayList<>();
     private LeftListMenuAdapter menuAdapter;
     private Activity mContext;
 
+    private BaiduMapFragment baiduMapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mContext = this;
         initView();
-        switchCarsListFragment();
+
+        startService(new Intent(this, DataService.class));
+
     }
 
     /**
@@ -76,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         mDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         initMenu();
+        switchMapFragment();
     }
 
     /**
@@ -98,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_search) {
-            SearchResultActivity.startAction(mContext);
+            SearchResultActivity.startAction(mContext,REQUEST_SEARCHE_CODE);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -107,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 切换到车辆列表页面
      */
-    private void switchCarsListFragment() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, MapFragment.getInstance()).commit();
+    private void switchMapFragment() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,BaiduMapFragment.getInstance()).commit();
     }
 
 
@@ -142,5 +152,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_SEARCHE_CODE && resultCode == RESULT_OK){
+            EventBus.getDefault().post(new BaiduMapEvent(0));
+            Logger.d("发送事件");
+        }
     }
 }

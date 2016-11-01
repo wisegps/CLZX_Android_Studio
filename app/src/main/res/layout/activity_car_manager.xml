@@ -18,14 +18,14 @@
         android:text="@string/no_car"
         android:visibility="gone"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/f_add_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/px_32"
-        android:elevation="@dimen/px_30"
-        android:src="@drawable/ic_fab_add" />
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/f_add_car"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_margin="@dimen/px_32"-->
+        <!--android:elevation="@dimen/px_30"-->
+        <!--android:src="@drawable/ic_fab_add" />-->
 
 </RelativeLayout>
