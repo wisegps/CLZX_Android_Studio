@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_map_marker_info_window">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/px_26"
+        android:paddingBottom="@dimen/px_16"
+        android:paddingLeft="@dimen/px_26"
+        android:paddingRight="@dimen/px_26" >
+
+        <TextView
+            android:id="@+id/tv_car_id"
+            android:paddingBottom="@dimen/px_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="兰博基尼"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_2"
+            android:background="@color/white"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="时间 ："/>
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="2016-11-21 17:51:36"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="状态 ："/>
+            <TextView
+                android:id="@+id/tv_car_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="行驶，12km/h"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="里程 ："/>
+            <TextView
+                android:id="@+id/tv_miliage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="2451公里"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_2"
+            android:background="@color/white"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/px_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_car_track"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:text="@string/car_track"/>
+            <View
+                android:layout_width="@dimen/px_2"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+            <TextView
+                android:id="@+id/tv_car_path"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:text="@string/car_path"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="@dimen/px_26"
+        android:layout_height="@dimen/px_26"
+        android:layout_marginRight="@dimen/px_6"
+        android:layout_marginTop="@dimen/px_6"
+        android:src="@drawable/ic_infowindow_colse"/>
+
+</RelativeLayout>

@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mContext = this;
         initView();
-
         startService(new Intent(this, DataService.class));
 
     }

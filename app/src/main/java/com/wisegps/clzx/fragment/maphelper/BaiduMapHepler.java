@@ -1,6 +1,9 @@
 package com.wisegps.clzx.fragment.maphelper;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
@@ -16,6 +19,7 @@ import com.baidu.mapapi.map.PolygonOptions;
 import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.map.Stroke;
 import com.baidu.mapapi.model.LatLng;
+import com.orhanobut.logger.Logger;
 import com.wisegps.clzx.R;
 
 import java.util.List;
@@ -25,13 +29,13 @@ import java.util.List;
  */
 public class BaiduMapHepler {
 
-    private Context mContext;
+    private Activity mContext;
     private BaiduMap mBaiduMap;
 
     public static final int MAP_TYPE_NORMAL    = 1;//普通街道地图
     public static final int MAP_TYPE_SATELLITE = 2;//卫星视图
 
-    public BaiduMapHepler(Context context, BaiduMap baiduMap){
+    public BaiduMapHepler(Activity context, BaiduMap baiduMap){
         this.mContext = context;
         this.mBaiduMap = baiduMap;
     }
@@ -57,13 +61,24 @@ public class BaiduMapHepler {
         }
     }
 
+
+
     /**
      * @param target 设置要移动镜头的目标（移动这个点会在地图中心）
      * @param zoom 设置缩放级别
      */
     public void animateCamera(LatLng target, int zoom){
+//        int targetScreenX = mBaiduMap.getMapStatus().targetScreen.x;// 地图操作中心点在屏幕中的坐标x
+//        int targetScreenY = mBaiduMap.getMapStatus().targetScreen.y;// 地图操作中心点在屏幕中的坐标y
+//        Logger.d("dm : " + screenWidth + " --" + screenHeigh + "\n"
+//        + "tar : " + targetScreenX + " --" + targetScreenY);
+//        Point point = new Point(targetScreenX,targetScreenY+100);
         MapStatus.Builder builer = new MapStatus.Builder();
-        MapStatus mMapStatus = builer.target(target).zoom(zoom).build();// 定义地图状态
+        MapStatus mMapStatus = builer
+                .target(target)
+                .zoom(zoom)
+//                .targetScreen(point)
+                .build();// 定义地图状态
         MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);// 定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
         //mBaiduMap.setMapStatus(mMapStatusUpdate);// 改变地图状态
         mBaiduMap.animateMapStatus(mMapStatusUpdate);

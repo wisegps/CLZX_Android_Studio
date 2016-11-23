@@ -41,4 +41,9 @@
         android:elevation="@dimen/px_30"
         android:background="@drawable/selector_my_location_bg"/>
 
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/item_car_path_play"></include>
 </RelativeLayout>

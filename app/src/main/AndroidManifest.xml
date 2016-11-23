@@ -128,9 +128,21 @@
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
             android:label="@string/car_detail"/>
 
+        <activity android:name=".activity.CarPathActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/car_path"></activity>
 
+        <activity android:name=".activity.TrackingActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/car_track"></activity>
 
         <service android:name=".service.DataService"></service>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+        </service>
 
     </application>
 
